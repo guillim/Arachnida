@@ -57,14 +57,9 @@ Meteor.methods({
         // console.log(proxyServerIdAndAddress,newProxyUrl);
       }
       const crawler = await HCCrawler.launch({
-        //if you have you own proxy server define it here
         args: (usingProxy) ? [ '--proxy-server='+newProxyUrl ] : [],
         maxConcurrency: 1,
-        // eevaluatePage: new Function(c.functionToExecute),
-        evaluatePage: (() => {
-          const wait = () => new Promise(resolve => void setTimeout(resolve, 5000)); // wait for 5 sec
-          return wait().then(() => { h1 : $('h1').text()});
-        }),
+        evaluatePage: new Function(c.functionToExecute),
         customCrawl:  async (page, crawl) => {
           // You can access the page object before requests
           // await page.setRequestInterception(true);
