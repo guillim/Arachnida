@@ -47,13 +47,18 @@ Meteor.methods({
 
 
     (async () => {
+      let newProxyUrl;
       let proxyServerIdAndAddress = Assets.getText('proxyServerIdAndAddress.txt').trim()
-      // The proxy-chain package performs both basic HTTP proxy forwarding as well as HTTP CONNECT tunnelling to support protocols such as HTTPS and FTP
-      const newProxyUrl = await proxyChain.anonymizeProxy(proxyServerIdAndAddress);
-      // console.log(proxyServerIdAndAddress,newProxyUrl);
+      let usingProxy = (Assets.getText('proxyServerIdAndAddress.txt') && ['http://username:password@proxy.serviceprovider.com:8000',''].indexOf( Assets.getText('proxyServerIdAndAddress.txt').trim()) === -1) ? true :false
+      if(usingProxy){
+        console.log('You are using a proxy-server. If it is a mistake, please replace proxyServerIdAndAddress.txt by an empty line');
+        // The proxy-chain package performs both basic HTTP proxy forwarding as well as HTTP CONNECT tunnelling to support protocols such as HTTPS and FTP
+        newProxyUrl = await proxyChain.anonymizeProxy(proxyServerIdAndAddress);
+        // console.log(proxyServerIdAndAddress,newProxyUrl);
+      }
       const crawler = await HCCrawler.launch({
         //if you have you own proxy server define it here
-        args: [ '--proxy-server='+newProxyUrl ],
+        args: (usingProxy) ? [ '--proxy-server='+newProxyUrl ] : [],
         maxConcurrency: 1,
         // eevaluatePage: new Function(c.functionToExecute),
         evaluatePage: (() => {
