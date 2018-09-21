@@ -38,7 +38,7 @@ Yes, jquery is already set up. You simply need to provide the selectors (id, cla
 ![screenshot](https://ibin.co/4GSHWS9cgqUR.png)
 
 ### View the results: ###
-![screenshot](https://imagebin.ca/v/4GSJEILx9T9s)
+![screenshot](https://ibin.co/4GSJEILx9T9s.png)
 
 
 ## What's included ##
