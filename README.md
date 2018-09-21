@@ -25,11 +25,11 @@ You will be able to add a crawler in 5 second, add a URL to scrap and run it !
 * MongoDB as database
 
 
-I am looking for people to make pull request to improve Arachnida. Please do it :)
-TO DO:
+I am looking for people to make pull request to improve Arachnida. Please do it :)  
+TO DO:  
 1. Setup live queue of url to be scrapped (ex: at the moment, you can't click straignt on a link and scrap it)
 2. Live Log from the server brought to the interface to help debuging
 
-Thanks to:
-Boilerplate: yogiben.
-HeadlessChrome layer: yujiosaka
+Thanks to:  
+Boilerplate: yogiben.  
+HeadlessChrome layer: yujiosaka  
