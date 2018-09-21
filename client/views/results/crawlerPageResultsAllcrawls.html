@@ -1,0 +1,82 @@
+<template name="crawlerPageResultsAllcrawls">
+		<div class="container panel-heading">
+			<h3 class="panel-title">
+				<span>List of every crawl for Crawler {{crawlerPage.title}}</span>
+				<span class="pull-right"> <a class="btn btn-success" href="/crawlerPage/{{crawlerPage._id}}">Back</a> </span>
+			</h3>
+		</div>
+			<div class="template-dashboard">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							{{> crawls}}
+						</div>
+					</div>
+				</div>
+		</div>
+</template>
+
+<template name="crawls">
+	<div class="template-posts">
+		{{#each  crawls}}
+		{{> crawl}}
+		{{else}}
+		{{> noData}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="crawl">
+	<div class="template-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{title}}
+						<span class="" style="text-align:right;"> <a class="btn btn-success" href="/crawlerPage/crawlPageResultsOnecrawlsimple/{{crawlID}}" >See</a> </span>
+						<span style="font-size:0.8em">crawl identification number: {{crawlID}}</span>
+						<span class="pull-right btn btn-danger deleteCrawl"><i class="fa fa-times" buttonContent="delete crawl"></i> delete</span>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<div class="media-body">
+							<p>Finished at: {{ createdAt }}</p>
+							<div>
+								<p style="max-height:50px; overflow:hidden;">Ex of URL crawled: {{ URL_crawled }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="crawlPageResultsOnecrawlsimple">
+	<div class="template-dashboard crawlPageResultsOnecrawlsimple">
+		<div class="container">
+			<div class="row">
+				<div class="template-post">
+					<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+										Results for {{title}}
+										<a type="button" class=" btn-success pull-right" href="/crawlerPage/crawlerPageResultsAllcrawls/{{crawlerID}}" style="padding:2px;margin-top:-2px;border-radius:4px;color:white"><i class="fa fa-chevron-left"></i> back </a>
+								</h3>
+							</div>
+							<div class="panel-body">
+								{{> reactiveTable collection="crawlPageResultsOnecrawlsimple" settings=settings listCol='test'}}
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="templateForCellReactiveTableSimpleAct">
+	<span class="pull-right">
+		{{#quickRemoveButton collection="Resulturls" _id=this._id class="btn btn-danger"}}<i class="fa fa-times disabled"></i>{{/quickRemoveButton}}
+	</span>
+</template>

@@ -1,0 +1,72 @@
+<template name="dashboard">
+	<div class="template-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					{{> crawlers}}
+				</div>
+				<div class="col-md-3">
+					{{> addCrawler}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="addCrawler">
+	<div class="template-add-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">add crawler</h3>
+				</div>
+				<div class="panel-body">
+					{{#autoForm id="add" collection="Crawlers" type="insert"}}
+					{{> afQuickField name="title"}}
+					{{> afQuickField name="functionToExecute"}}
+					<button type="submit" class="btn btn-primary">add</button>
+					{{/autoForm}}
+				</div>
+		</div>
+	</div>
+</template>
+
+<template name="crawlers">
+	<div class="template-posts">
+		{{#each  crawlers}}
+		{{> crawler}}
+		{{else}}
+		{{> noData}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="crawler">
+	<div class="template-post">
+		<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class=""></span>
+						{{title}} <span style="font-size:0.8em">({{_id}})</span>
+						<span class="" style="text-align:right;"> <a class="btn btn-success" href="/crawlerPage/{{_id}}" >See</a> </span>
+						<span class="pull-right btn btn-danger deleteCrawler"><i class="fa fa-times" buttonContent="delete crawler"></i> delete</span>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<a class="pull-left" href="#">
+							{{> avatar userId=owner initials=title shape="circle"}}
+						</a>
+						<div class="media-body">
+							<p>{{content}}</p>
+							{{#if $eq owner User._id}}
+							{{/if}}
+							<div>
+								<h4><i>fonction to be executed on each page:</i></h4>
+								<p style="max-height:50px; overflow:hidden;">{{ functionToExecute }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</template>

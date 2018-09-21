@@ -1,0 +1,41 @@
+<template name="crawlerPage">
+	<div class="template-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="template-post">
+					<div class="panel panel-default">
+							<div class="panel-heading" style="height:50px;">
+								<h3 class="panel-title" style="display:flex;justify-content:space-between;align-items:center;">
+								<span style="text-align:left;font-size:1.2em">
+										{{crawlerInfo.title}} <span style="font-size:0.8em">({{crawlerInfo._id}})</span>
+								</span>
+								</h3>
+							</div>
+							<div class="panel-heading" style="background-color:black">
+								<span style="text-align:right;">
+									<a class="btn btn-warning" href="/crawlerPage/startURL/{{crawlerInfo._id}}">Edit start URLs</a>
+									{{#if statusIsReady}}
+										<button class="btn btn-primary launch1"> Launch 1 url to test</button>
+										<button class="btn btn-primary launch "> Launch <b>ALL</b> </button>
+									{{else}}
+										<button class="btn btn-danger "> WAIT </button>
+									{{/if}}
+									<a class="btn btn-success seePrevious pull-right" href="/crawlerPage/crawlerPageResultsAllcrawls/{{crawlerInfo._id}}"> See results </a>
+								</span>
+							</div>
+							<div class="panel-body" style="padding:0px">
+								<div class="media">
+									<div class="media-body" style="position:relative">
+			              {{> editor fct=crawlerInfo.functionToExecute crawlerID=crawlerInfo._id}}
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top:50px">
+				{{> printScreenshot crawlerID=crawlerInfo._id}}
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,10 @@
+<template name="templateForCellReactiveTable">
+	<input type="checkbox" checked={{checkboxValue}} class="disabled"/> <span>{{URL}}</span>
+	<span class="pull-right toogleClass1">
+		<button type="button" class="btn btn-warning"><i class="fa fa-pencil disabled" buttonContent="Edit crawler"></i></button>
+		{{#quickRemoveButton collection="Starturls" _id=this._id class="btn btn-danger"}}<i class="fa fa-times disabled"></i>{{/quickRemoveButton}}
+	</span>
+	<span class="pull-right toogleClass2 hidden">
+		{{> quickForm collection="Starturls" doc=this id=this._id type="update" fields="URL" buttonContent="edit" template="bootstrap3-inline" label-class="col-sm-3" input-col-class="col-sm-9" label-class="sr-only"}}
+	</span>
+</template>

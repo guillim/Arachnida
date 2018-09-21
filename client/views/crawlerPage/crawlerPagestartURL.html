@@ -1,0 +1,45 @@
+<template name="crawlerPagestartURL">
+	<div class="template-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="template-post">
+					<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+										{{crawlerInfo.title}} <span style="font-size:0.8em">({{crawlerInfo._id}})</span> <a type="button" class=" btn-success pull-right" href="/crawlerPage/{{crawlerInfo._id}}" style="padding:2px;margin-top:-2px;border-radius:4px;color:white"><i class="fa fa-chevron-left"></i> back </a>
+								</h3>
+							</div>
+							<div class="panel-body">
+								{{> reactiveTable collection="userStarturls" settings=settings }}
+								<!-- {{> reactiveTable collection=userStarturls showNavigation='never' rowsPerPage=5}} -->
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{{> addstartURL crawlerID=crawlerInfo._id}}
+			</div>
+			<div class="row">
+				{{> uploadFile crawlerID=crawlerInfo._id}}
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="addstartURL">
+	<div class="template-add-post">
+		<div class="panel panel-default">
+				<div class="panel-heading" style="background-color: #337ab7;color: white;">
+					<h3 class="panel-title">add a new start URL</h3>
+				</div>
+				<div class="panel-body">
+					{{#autoForm id="add" collection="Starturls" type="insert"}}
+					{{> afQuickField name="URL" label="URL"}}
+					{{> afFieldInput name="crawlerID" type="hidden" value=crawlerID}}
+					<button type="submit" class="btn btn-primary">add</button>
+					{{/autoForm}}
+				</div>
+		</div>
+	</div>
+</template>

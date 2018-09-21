@@ -1,0 +1,31 @@
+{
+  "name": "Arachnida",
+  "version": "1.0.0",
+  "description": "Scrap the web easily, without coding knowledge",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.51",
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "headless-chrome-crawler": "^1.8.0",
+    "meteor-node-stubs": "^0.4.1",
+    "proxy-chain": "^0.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillim/meteor-starter-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillim/meteor-starter-kit/issues"
+  },
+  "homepage": "https://github.com/guillim/meteor-starter-kit#readme"
+}

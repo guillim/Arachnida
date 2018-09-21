@@ -1,0 +1,7 @@
+.meteor/local
+.meteor/meteorite
+.meteor/.id
+package-lock.json
+node_modules
+public/img/screenshot/**
+private/proxyServerIdAndAddress_perso.txt

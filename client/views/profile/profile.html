@@ -1,0 +1,14 @@
+<template name="profile">
+	<div class="template-profile">
+		<div class="container">
+			<div class="row">
+				{{#autoForm id="updateProfile" collection=Users doc=User type="update"}}
+				<div class="col-md-12">
+					{{> afQuickField name='profile' omitFields="profile.picture"}}
+					<button type="submit" class="btn btn-primary">{{_ "update"}}</button>
+				</div>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>
