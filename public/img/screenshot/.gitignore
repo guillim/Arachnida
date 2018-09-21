@@ -1,0 +1,4 @@
+# this is simply to keep this empty folder inside git, otherwise it isn't commited
+*
+# Except this file
+!.gitignore
