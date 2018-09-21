@@ -1,4 +1,4 @@
-Arachnida : simple web interface to pilot crawlers
+Arachnida : simple web interface to pilot crawlers (Under Construction)
 =========
 
 Scrap the web easily, without coding knowledge very limited.
