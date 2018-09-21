@@ -1,7 +1,7 @@
 Arachnida : simple web interface to pilot crawlers
 =========
 
-Scrap the web easily, without coding knowledge.
+Scrap the web easily, without coding knowledge very limited.
 Arachnida is providing a simple web interface to pilot powerful crawlers (running Headless Chrome)
 
 # Install (2 seconds) #
@@ -10,9 +10,35 @@ open a terminal, and run:
 git clone https://github.com/guillim/meteor-starter-kit.git myapp  && cd myapp  && meteor
 ```
 
-Finished !
-Now have a look at it in google chrome, clicking on this link: http://localhost:3000
-You will be able to add a crawler in 5 second, add a URL to scrap and run it ! 
+**Finished !** 
+
+# Use (1 minunte) #  
+
+Now open google chrome (or any browser) and follow this link: http://localhost:3000  
+
+You will be able to add a crawler, configure it, and run it in seconds ! 
+
+### 1. Create a crawler on the main page: ###
+
+First give it a name, and leave the function empty (except if you know what your doing) 
+![screenshot](https://ibin.co/4GSHblERpQfn.png)
+
+### 2. Configure your crawler: ###
+
+This is the only moment when a bit of coding knowledge is helpful. In the main part, you need to write a JavaScript function that will be executed on every page scrapped by the crawler.   
+
+For instance, to extract the title of each page, write:
+```
+return {             
+  title: $('title').text(),
+};
+```  
+Yes, jquery is already set up. You simply need to provide the selectors (id, class...)
+
+![screenshot](https://ibin.co/4GSHWS9cgqUR.png)
+
+### View the results: ###
+![screenshot](https://imagebin.ca/v/4GSJEILx9T9s)
 
 
 ## What's included ##
