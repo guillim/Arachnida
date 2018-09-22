@@ -56,6 +56,7 @@ I am looking for people to make pull request to improve Arachnida. Please do it 
 TO DO:  
 1. Setup live queue of url to be scrapped (ex: at the moment, you can't click straignt on a link and scrap it)
 2. Live Log from the server brought to the interface to help debuging
+3. Results export functionality (CSV & Json)  
 
 ### Thanks ###  
 Boilerplate: yogiben.  
