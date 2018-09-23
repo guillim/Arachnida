@@ -1,7 +1,7 @@
 Arachnida : simple web interface to pilot crawlers (Under Construction)
 =========
 
-Scrap the web easily, without coding knowledge very limited.
+Scrap the web easily -> no need to be a coding expert.
 Arachnida is providing a simple web interface to pilot powerful crawlers (running Headless Chrome)
 
 # Install (2 seconds) #
