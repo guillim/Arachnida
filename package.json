@@ -7,11 +7,11 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@babel/runtime": "7.0.0-beta.55",
+    "@babel/runtime": "^7.0.0-beta.55",
     "bcrypt": "^1.0.3",
     "headless-chrome-crawler": "^1.8.0",
     "meteor-node-stubs": "^0.4.1",
-    "proxy-chain": "^0.2.5"
+    "proxy-chain": "^0.2.7"
   },
   "devDependencies": {},
   "scripts": {
