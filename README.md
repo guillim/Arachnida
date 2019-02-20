@@ -7,7 +7,7 @@ Arachnida is providing a simple web interface to pilot powerful crawlers (runnin
 # Install (2 seconds) #
 open a terminal, and run:
 ```
-git clone https://github.com/guillim/Arachnida.git myapp  && cd myapp  && meteor
+git clone https://github.com/guillim/Arachnida.git arachnida  && cd arachnida  && meteor
 ```
 
 **Finished !** 
