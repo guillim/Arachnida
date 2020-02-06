@@ -9,6 +9,33 @@ Template.crawl.events({
   }
 });
 
+Template.crawlPageResultsOnecrawlsimple.events({
+  'click .downloadCrawl': function() {
+	let csvData = `URL,${this.listColumns.join()}\n`;
+
+	
+	let ResulturlsCollection = Resulturls.find({crawlID:this.crawlID},{sort: {createdAt: -1}}).fetch();
+	for (let indexCollection = 0; indexCollection < ResulturlsCollection.length; indexCollection++) {
+		const elementCollection = ResulturlsCollection[indexCollection];
+		csvData += elementCollection.URL_crawled;
+		for (let indexColumn = 0; indexColumn < this.listColumns.length; indexColumn++) {
+			const elementColumn = this.listColumns[indexColumn];
+			if(elementCollection.result && elementCollection.result[elementColumn]) {
+				csvData+=`,${elementCollection.result[elementColumn]}`;
+			}else {
+				csvData+=`,`;
+			}
+		}
+		csvData+='\n';
+	}
+	const hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvData);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = `${this.title}.csv`;
+    hiddenElement.click();
+  }
+});
+
 Template.crawlPageResultsOnecrawlsimple.helpers({
 	settings: function () {
           let fieldsArray = []
