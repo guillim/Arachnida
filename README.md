@@ -1,7 +1,7 @@
 Arachnida : simple web interface to pilot crawlers (Under Construction)
 =========
 
-Scrap the web easily -> no need to be a coding expert.
+Scrape the web easily -> no need to be a coding expert.
 Arachnida is providing a simple web interface to pilot powerful crawlers (running Headless Chrome)
 
 # Install (2 seconds) #
@@ -20,12 +20,12 @@ You will be able to add a crawler, configure it, and run it in seconds !
 
 ### 1. Create a crawler on the main page: ###
 
-First give it a name, and leave the function empty (except if you know what your doing) 
+First give it a name, and leave the function empty (except if you know what you're doing) 
 ![screenshot](https://ibin.co/4GSHblERpQfn.png)
 
 ### 2. Configure your crawler: ###
 
-This is the only moment when a bit of coding knowledge is helpful. In the main part, you need to write a JavaScript function that will be executed on every page scrapped by the crawler.   
+This is the only moment when a bit of coding knowledge is helpful. In the main part, you need to write a JavaScript function that will be executed on every page scraped by the crawler.   
 
 For instance, to extract the title of each page, write:
 ```
@@ -43,7 +43,7 @@ Yes, jquery is already set up. You simply need to provide the selectors (id, cla
 
 ## What's included ##
 * See screenshot of your running crawler
-* Manually add URL to be scrapped, or upload a CSV 
+* Manually add URL to be scraped, or upload a CSV 
 * Sign in / Sign up  
 * Account management: Profile Page, Username, Change password, Delete account...
 * Admin for the webmaster: go to `/admin`
@@ -52,9 +52,9 @@ Yes, jquery is already set up. You simply need to provide the selectors (id, cla
 
 # Contribute #  
 
-I am looking for people to make pull request to improve Arachnida. Please do it :)  
+I am looking for people to make pull requests to improve Arachnida. Please do it :)  
 TO DO:  
-1. Setup live queue of url to be scrapped (ex: at the moment, you can't click straignt on a link and scrap it)
+1. Setup live queue of url to be scraped (ex: at the moment, you can't click straight on a link and scrape it)
 2. Live Log from the server brought to the interface to help debuging
 3. Results export functionality (CSV & Json)  
 
