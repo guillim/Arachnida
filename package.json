@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "headless-chrome-crawler": "^1.8.0",
     "meteor-node-stubs": "^0.4.1",
     "proxy-chain": "^0.2.7"
