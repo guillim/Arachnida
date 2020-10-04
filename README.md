@@ -12,7 +12,7 @@ git clone https://github.com/guillim/Arachnida.git arachnida  && cd arachnida  &
 
 **Finished !** 
 
-# Use (1 minunte) #  
+# Use (1 minute) #  
 
 Now open google chrome (or any browser) and follow this link: http://localhost:3000  
 
@@ -55,7 +55,7 @@ Yes, jquery is already set up. You simply need to provide the selectors (id, cla
 I am looking for people to make pull requests to improve Arachnida. Please do it :)  
 TO DO:  
 1. Setup live queue of url to be scraped (ex: at the moment, you can't click straight on a link and scrape it)
-2. Live Log from the server brought to the interface to help debuging
+2. Live Log from the server brought to the interface to help debugging
 3. Results export functionality (CSV & Json)  
 
 ### Thanks ###  
